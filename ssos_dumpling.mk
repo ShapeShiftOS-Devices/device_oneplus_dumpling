@@ -22,13 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/dumpling/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_dumpling
+SSOS_BUILD_TYPE := OFFICIAL
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_NAME := ssos_dumpling
 PRODUCT_DEVICE := dumpling
-PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := ONEPLUS A5010
+PRODUCT_MANUFACTURER := Google
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Pixel 5
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
@@ -39,9 +44,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus5T \
     PRODUCT_NAME=OnePlus5T
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="OnePlus5T-user 10 QKQ1.191014.012 2010292059 release-keys"
-
-BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys
 
 TARGET_VENDOR := oneplus
